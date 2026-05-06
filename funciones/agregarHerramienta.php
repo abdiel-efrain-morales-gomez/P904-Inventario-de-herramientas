@@ -1,7 +1,7 @@
 <?php
 function agregarHerramienta(&$herramientas) {
 
-    echo "Registrar herramienta\n ";
+    echo "\n--- Registrar herramienta ---\n";
 
     echo "Nombre: ";
     $nombre = readline();
@@ -15,8 +15,16 @@ function agregarHerramienta(&$herramientas) {
     echo "Estado (Disponible/No disponible): ";
     $estado = readline();
 
+    $nuevoId = 1;
+
+    for ($i = 0; $i < count($herramientas); $i++) {
+        if ($herramientas[$i]["id"] >= $nuevoId) {
+            $nuevoId = $herramientas[$i]["id"] + 1;
+        }
+    }
+
     $herramientas[] = [
-        "id" => count($herramientas),
+        "id" => $nuevoId,
         "nombre" => $nombre,
         "tipo" => $tipo,
         "cantidad" => $cantidad,

@@ -1,7 +1,6 @@
 <?php
 function datosHerramientas() {
-    return 
-    [
+    $herramientas = [
 
         [
             "id" => 1,
@@ -18,5 +17,6 @@ function datosHerramientas() {
             "estado" => "No disponible"
         ]
     ];
+    return $herramientas;
 }
 
